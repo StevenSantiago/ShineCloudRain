@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		07855E2E1E37675B003320A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855E2D1E37675B003320A8 /* AppDelegate.swift */; };
-		07855E301E37675B003320A8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855E2F1E37675B003320A8 /* ViewController.swift */; };
+		07855E301E37675B003320A8 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07855E2F1E37675B003320A8 /* WeatherVC.swift */; };
 		07855E331E37675B003320A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07855E311E37675B003320A8 /* Main.storyboard */; };
 		07855E351E37675B003320A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07855E341E37675B003320A8 /* Assets.xcassets */; };
 		07855E381E37675B003320A8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07855E361E37675B003320A8 /* LaunchScreen.storyboard */; };
+		2491A85D5C9E1D17F5581AD5 /* Pods_ShineCloudRain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCFA891E07A9290C223EEEC1 /* Pods_ShineCloudRain.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		07855E2A1E37675B003320A8 /* ShineCloudRain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShineCloudRain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07855E2D1E37675B003320A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07855E2F1E37675B003320A8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		07855E2F1E37675B003320A8 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
 		07855E321E37675B003320A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07855E341E37675B003320A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07855E371E37675B003320A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07855E391E37675B003320A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F4705FE115DF9DE8DB7B78D /* Pods-ShineCloudRain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShineCloudRain.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShineCloudRain/Pods-ShineCloudRain.debug.xcconfig"; sourceTree = "<group>"; };
+		A11152ADADDE08BB9A9FB6EC /* Pods-ShineCloudRain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShineCloudRain.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShineCloudRain/Pods-ShineCloudRain.release.xcconfig"; sourceTree = "<group>"; };
+		CCFA891E07A9290C223EEEC1 /* Pods_ShineCloudRain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShineCloudRain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2491A85D5C9E1D17F5581AD5 /* Pods_ShineCloudRain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				07855E2C1E37675B003320A8 /* ShineCloudRain */,
 				07855E2B1E37675B003320A8 /* Products */,
+				81FC93C82F3B4116735DF94E /* Pods */,
+				E9AFDE15C7087FC6E7038BE0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +62,30 @@
 			isa = PBXGroup;
 			children = (
 				07855E2D1E37675B003320A8 /* AppDelegate.swift */,
-				07855E2F1E37675B003320A8 /* ViewController.swift */,
+				07855E2F1E37675B003320A8 /* WeatherVC.swift */,
 				07855E311E37675B003320A8 /* Main.storyboard */,
 				07855E341E37675B003320A8 /* Assets.xcassets */,
 				07855E361E37675B003320A8 /* LaunchScreen.storyboard */,
 				07855E391E37675B003320A8 /* Info.plist */,
 			);
 			path = ShineCloudRain;
+			sourceTree = "<group>";
+		};
+		81FC93C82F3B4116735DF94E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F4705FE115DF9DE8DB7B78D /* Pods-ShineCloudRain.debug.xcconfig */,
+				A11152ADADDE08BB9A9FB6EC /* Pods-ShineCloudRain.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E9AFDE15C7087FC6E7038BE0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CCFA891E07A9290C223EEEC1 /* Pods_ShineCloudRain.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07855E3C1E37675B003320A8 /* Build configuration list for PBXNativeTarget "ShineCloudRain" */;
 			buildPhases = (
+				72FAEA4178C36CB4C0ADC269 /* [CP] Check Pods Manifest.lock */,
 				07855E261E37675B003320A8 /* Sources */,
 				07855E271E37675B003320A8 /* Frameworks */,
 				07855E281E37675B003320A8 /* Resources */,
+				8C33B69BA189D09E2576B4AF /* [CP] Embed Pods Frameworks */,
+				CEB9E707756C10EC9B6FDE20 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +158,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		72FAEA4178C36CB4C0ADC269 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C33B69BA189D09E2576B4AF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShineCloudRain/Pods-ShineCloudRain-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEB9E707756C10EC9B6FDE20 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShineCloudRain/Pods-ShineCloudRain-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		07855E261E37675B003320A8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07855E301E37675B003320A8 /* ViewController.swift in Sources */,
+				07855E301E37675B003320A8 /* WeatherVC.swift in Sources */,
 				07855E2E1E37675B003320A8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,7 +331,9 @@
 		};
 		07855E3D1E37675B003320A8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F4705FE115DF9DE8DB7B78D /* Pods-ShineCloudRain.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ShineCloudRain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -268,7 +345,9 @@
 		};
 		07855E3E1E37675B003320A8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A11152ADADDE08BB9A9FB6EC /* Pods-ShineCloudRain.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ShineCloudRain/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -297,6 +376,7 @@
 				07855E3E1E37675B003320A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
