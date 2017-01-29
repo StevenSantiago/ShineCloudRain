@@ -81,7 +81,7 @@
                                 <rect key="frame" x="0.0" y="300" width="414" height="436"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DataWeather" rowHeight="80" id="5jo-Rl-BSb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DataWeather" rowHeight="80" id="5jo-Rl-BSb" customClass="WeatherCell" customModule="ShineCloudRain" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" tableViewCell="5jo-Rl-BSb" id="BiH-Kk-u2l">
@@ -127,7 +127,7 @@
                                                         </stackView>
                                                     </subviews>
                                                 </stackView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nvs-T7-fu0">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nvs-T7-fu0">
                                                     <rect key="frame" x="16" y="17.999999999999996" width="50" height="43.666666666666657"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="vtq-Fu-jlC"/>
@@ -146,6 +146,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="dayLbl" destination="xp8-ne-4A7" id="62q-kK-Fxt"/>
+                                            <outlet property="highTemp" destination="z8F-gR-XNS" id="OOG-Lb-1nT"/>
+                                            <outlet property="lowTemp" destination="K9n-L1-wjX" id="FVE-Tj-kqH"/>
+                                            <outlet property="weatherIcon" destination="nvs-T7-fu0" id="27Z-pz-O0C"/>
+                                            <outlet property="weatherType" destination="WH5-hA-4yG" id="hfZ-hA-LvP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -167,7 +174,7 @@
                         <outlet property="currentWeatherDesc" destination="o2z-kC-9OE" id="4F6-d4-0R2"/>
                         <outlet property="currentWeatherImg" destination="7xf-ri-h2q" id="xPk-T0-wnJ"/>
                         <outlet property="dateLbl" destination="dpk-De-hTZ" id="R3h-Pg-Pef"/>
-                        <outlet property="tabelView" destination="ebP-68-ZrD" id="gpJ-Rg-MPm"/>
+                        <outlet property="tableView" destination="ebP-68-ZrD" id="fiD-5m-DBW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

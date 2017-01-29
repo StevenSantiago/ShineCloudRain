@@ -47,19 +47,11 @@ class Forecast {
     init(weatherDict : Dictionary<String,AnyObject>) {
         if let temp = weatherDict["temp"] as? Dictionary<String,AnyObject>{
             if let min = temp["min"] as? Double {
-                let preKelvinToFarenheit = (min) * (9/5) - 459.67
-                
-                let Farenheit = Double(round(10 * preKelvinToFarenheit/10))
-                
-                self._lowTemp = String(Farenheit)
+                self._lowTemp = String(kelvinToFahrenheit(_value: min))
             }
             
             if let max = temp["max"] as? Double {
-                let preKelvinToFarenheit = (max) * (9/5) - 459.67
-                
-                let Farenheit = Double(round(10 * preKelvinToFarenheit/10))
-                
-                self._highTemp = String(Farenheit)
+                self._highTemp = String(kelvinToFahrenheit(_value: max))
             }
             
         }
@@ -79,6 +71,9 @@ class Forecast {
             self._date  = unixConvertedDate.dayOfTheWeek()
         }
     }
+    
+    
+    
     
     
 }

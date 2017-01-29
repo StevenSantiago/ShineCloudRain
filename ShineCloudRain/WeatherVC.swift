@@ -8,47 +8,75 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
 
-class WeatherVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class WeatherVC: UIViewController,UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var currentTemp: UILabel!
     @IBOutlet weak var currentLoc: UILabel!
     @IBOutlet weak var currentWeatherImg: UIImageView!
     @IBOutlet weak var currentWeatherDesc: UILabel!
-    @IBOutlet weak var tabelView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    
+    let locationManager = CLLocationManager()
+    var currentLocation: CLLocation!
     
     var forecast : Forecast!
     
-    private let numberOfCells = 6
+    
     var currentWeather = CurrentWeather()
     var forecasts = [Forecast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        tabelView.delegate = self
-        tabelView.dataSource = self
-        currentWeather.downloadWeatherDetails {
-            self.downloadForecastData {
-                self.updateMainUI()
-            }
-            
-        }
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startMonitoringSignificantLocationChanges()
+
+        tableView.delegate = self
+        tableView.dataSource = self
+        
         
     }
     
-    // func numberOfSections(in tableView: UITableView) -> Int {
-    //   return 1
-    // }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        locationAuthStatus()
+    }
+    
+    func locationAuthStatus() { // will have pop up window appear to request location usage from user
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            currentLocation = locationManager.location // save location if authorized
+            Location.sharedInstance.latitude = currentLocation.coordinate.latitude
+            Location.sharedInstance.longitude = currentLocation.coordinate.longitude
+            currentWeather.downloadWeatherDetails {
+                self.downloadForecastData {
+                    self.updateMainUI()
+                }
+                
+            }
+        } else { // if not request authorization
+            locationManager.requestWhenInUseAuthorization()
+            locationAuthStatus()
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfCells
+        return forecasts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DataWeather", for: indexPath)
-        return cell
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "DataWeather", for: indexPath) as? WeatherCell{
+            let forecast = forecasts[indexPath.row]
+            cell.configureCell(forecast: forecast)
+            return cell
+        } else {
+            return WeatherCell()
+        }
     }
     
     func updateMainUI () {
@@ -71,6 +99,8 @@ class WeatherVC: UIViewController,UITableViewDelegate, UITableViewDataSource {
                         self.forecasts.append(forecast)
                         print(obj)
                     }
+                    self.forecasts.remove(at: 0) // remove todays date from cell view
+                    self.tableView.reloadData()
                 }
             }
             completed()
